@@ -96,7 +96,7 @@ const getProducts = async () => {
               required/>
               <label htmlFor="password">Password</label>
             </div>
-            <button type='submit' className='btn btn-info w-100 mt-2 p-3' >登入</button>
+            <button type='submit' className='btn btn-info w-100 mt-2 p-3' onClick={checkLogin} >登入</button>
           </form>
         </div>
       ) : (
@@ -161,8 +161,8 @@ const getProducts = async () => {
                       <div className="d-flex"><p className="card-text"><span className="fw-bold">售價: </span><del className="text-secondary">{tempProduct.origin_price}元</del>/ {tempProduct.price}元</p></div>
                       <div className="d-flex">
                         {
-                          tempProduct.imagesUrl.map((url, index) => {
-                            return <img key={index} className="images" src={url} alt="附圖" />
+                          tempProduct.imagesUrl.map((imgUrl, index) => {
+                            return <img key={index} className="images" src={imgUrl} alt="附圖" />
                           })
                         }
                       </div>
