@@ -2,8 +2,8 @@ import { createContext, useEffect, useRef, useState } from 'react';
 import axios from "axios";
 import * as bootstrap from "bootstrap";
 import "./assets/style.css";
-import ProductModal from './assets/components/ProductModal';
-import Pagination from './assets/components/Pagination';
+import ProductModal from './components/ProductModal';
+import Pagination from './components/Pagination';
 
 // API 設定
 const API_BASE = import.meta.env.VITE_API_BASE;
