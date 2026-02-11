@@ -158,7 +158,21 @@ const uploadImage = async (e) => {
       console.log(error.response);
     }
   }
-  
+   const onSubmit = async (e) => {
+    e.preventDefault();
+    try {
+      const response = await axios.post(
+        `${API_BASE}/admin/signin`, formData);
+      const { token,expired } = response.data;
+      document.cookie = `hexToken=${token};expires=${new Date(expired)};`;
+      axios.defaults.headers.common['Authorization'] = token;
+      await getProducts();
+      setIsAuth(true);
+    } catch (error) {
+      console.error("登入失敗:", error);
+      setIsAuth(false);
+    }
+  }
   
     
     useEffect(()=>{
